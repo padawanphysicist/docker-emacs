@@ -4,6 +4,7 @@ MAINTAINER Victor santos <victor_santos@fisica.ufc.br>
 RUN pacman -Suy --noconfirm && \
     pacman -S --noconfirm \
     emacs-nox \
+    gawk \
     make \
     && \
     pacman -Scc --noconfirm
