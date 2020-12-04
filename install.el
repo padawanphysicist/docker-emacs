@@ -1,3 +1,6 @@
+;; Packages to be installed
+(setq package-list '(org-plus-contrib htmlize s dash f))
+
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
@@ -15,15 +18,21 @@ There are two things you can do about this warning:
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
-(package-refresh-contents)
+;; Fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
 
-(package-install 'use-package)
-(package-install 'org)
-(package-install 'org-plus-contrib)
-(package-install 'org-ref)
-(package-install 'htmlize)
-(package-install 'f)
-(package-install 's)
-(package-install 'dash)
-;(package-install 'mustache)
-;(package-install 'ht)
+;; (package-install 'use-package)
+;; (package-install 'org)
+;; (package-install 'org-plus-contrib)
+;; (package-install 'org-ref)
+;; (package-install 'htmlize)
+;; (package-install 'f)
+;; (package-install 's)
+;; (package-install 'dash)
+;; (package-install 'mustache)
+;; (package-install 'ht)
+;; Install missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))

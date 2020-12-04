@@ -1,13 +1,13 @@
 # Docker Emacs
 
-This [Dockerfile](Dockerfile) creates a sandboxed, runnable [Org-mode](https://orgmode.org/) environment built with the [archlinux/archlinux](https://hub.docker.com/r/archlinux/archlinux) image package and [GNU Emacs](https://www.gnu.org/software/emacs/) installed.
+This [Dockerfile](Dockerfile) creates a sandboxed, runnable [Org-mode](https://orgmode.org/) environment built with the [Debian](https://hub.docker.com/_/debian) image package and [GNU Emacs](https://www.gnu.org/software/emacs/) installed.
 
-Pull this image from [Docker Hub](https://hub.docker.com/repository/docker/padawanphysicist/emacs) with the command =docker pull padawanphysicist/emacs=.
+Pull this image from [Docker Hub](https://hub.docker.com/repository/docker/padawanphysicist/emacs) with the command `docker pull padawanphysicist/emacs`.
 
 ## Contains
 This comes with the following software:
-- GNU Emacs 26.2
-- Org mode version 9.2.3
+- GNU Emacs 28.0.50
+- Org mode version 9.3
 
 Since its only dependency is Docker, it should run on any platform with Docker installed. It may or may not work with earlier versions of docker.  To install docker on your system, see the [official docker installation instructions](https://docs.docker.com/installation).
 
